@@ -116,9 +116,10 @@ def combine(string1, string2):
     return (final)
 def main():
     im = Image.open("enigma.png")
-    st.image(im, caption='This Blueprint for the CR-56 AMAX comes after collecting key cards in Stadium and cracking a code.', use_column_width=True)
+    st.image(im, caption='This Blueprint for the CR-56 AMAX comes after collecting key cards in Stadium.', use_column_width=True)
     st.write("Input your code or codes, with N for the nose symbol, H for the house symbol, \
-             and S for the squiggly symbol that looks like a dollar sign. This will show you the \
+             and S for the squiggly symbol that looks like a dollar sign. This webapp will crack \
+             the code for you and will show you the \
              codes that you should guess.")
     user_code1 = st.text_input("Input your first code", "")
     user_code2 = st.text_input("Input your second code", "")
