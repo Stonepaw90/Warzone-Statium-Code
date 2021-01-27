@@ -1,5 +1,5 @@
 import streamlit as st
-
+from PIL import Image
 def factorial(n):
     if n == 1:
         return 1
@@ -115,24 +115,23 @@ def combine(string1, string2):
     final = ''.join([str(elem) for elem in final])
     return (final)
 def main():
-    if not st.sidebar.checkbox("I like Among Us!", value=True, key=None):
-        if st.sidebar.checkbox("I like Call of Duty: Warzone better.", value = False):
-            if st.sidebar.checkbox("I like looking in stadiums for itty bitty access cards!", value = False):
-                st.write("Input your code or codes, with N for the nose symbol, H for the house symbol, \
-                         and S for the squiggly symbol that looks like a dollar sign. This will show you the \
-                         codes that you should guess.")
-                user_code1 = st.text_input("Input your first code", "")
-                user_code2 = st.text_input("Input your second code", "")
-                user_code3 = st.text_input("Input your third code if you have one", "")
-                if not user_code2:
-                    finalstring = user_code1
-                else:
-                    string3 = combine(user_code1, user_code2)
-                    if user_code3:
-                        finalstring = combine(string3, user_code3)
-                    else:
-                        finalstring = string3
-                st.header("Your code is: " + finalstring)
-                code(finalstring)
+    im = Image.open("enigma.png")
+    st.image(im, caption='This Blueprint for the CR-56 AMAX comes after collecting key cards in Stadium and cracking a code.', use_column_width=True)
+    st.write("Input your code or codes, with N for the nose symbol, H for the house symbol, \
+             and S for the squiggly symbol that looks like a dollar sign. This will show you the \
+             codes that you should guess.")
+    user_code1 = st.text_input("Input your first code", "")
+    user_code2 = st.text_input("Input your second code", "")
+    user_code3 = st.text_input("Input your third code if you have one", "")
+    if not user_code2:
+        finalstring = user_code1
+    else:
+        string3 = combine(user_code1, user_code2)
+        if user_code3:
+            finalstring = combine(string3, user_code3)
+        else:
+            finalstring = string3
+    st.header("Your code is: " + finalstring)
+    code(finalstring)
 if __name__ == "__main__":
     main()
