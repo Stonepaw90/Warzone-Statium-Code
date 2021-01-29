@@ -131,8 +131,8 @@ def main():
     user_code2 = st.text_input("Input your second code", "")
     user_code3 = st.text_input("Input your third code if you have one", "")
     logging.basicConfig(filename='codes.log', encoding='utf-8', level=logging.DEBUG)
-    new_file = open("new.txt", "r")
-    log_file = open("log.txt", "w")
+    #new_file = open("new.txt", "r")
+    #log_file = open("log.txt", "w")
     log_print = ""
     if not user_code2:
         finalstring = user_code1
