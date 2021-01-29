@@ -137,9 +137,8 @@ def main():
         else:
             finalstring = string3
     st.header("Your code is: " + finalstring)
-    #log_file = open("log.txt", "a")
-    #log_file.write(user_code1 + " " + usercode_2 + " " + user_code3 + " :" + finalstring)
-    #log_file.close()
+    logging.basicConfig(filename='codes.log', encoding='utf-8', level=logging.DEBUG)
+    logging.info(user_code1 + " " + usercode_2 + " " + user_code3 + " :" + finalstring)
     
     code(finalstring)
 if __name__ == "__main__":
