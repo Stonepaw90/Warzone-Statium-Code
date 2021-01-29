@@ -56,6 +56,8 @@ def code(string):
         if b == "H":
             AL.append(i)
             counter[2] = 1
+        if b == "A" or b == "C":
+            st.write("Please change your code so it has no letters besides N, S, and H.")
     #print(NL, AL, SL)
     variables = sum(counter)
     #print(variables)
@@ -128,10 +130,15 @@ def main():
     user_code1 = st.text_input("Input your first code", "Example: 4H8N3SHN")
     user_code2 = st.text_input("Input your second code", "")
     user_code3 = st.text_input("Input your third code if you have one", "")
+    logging.basicConfig(filename='codes.log', encoding='utf-8', level=logging.DEBUG)
+    log_file = open("log.txt", "a")
     log_print = ""
     if not user_code2:
         finalstring = user_code1
-        log_print = user_code1
+        log_file.write(finalstring)
+        logging.info(finalstring)
+        
+
     else:
         string3 = combine(user_code1, user_code2)
         log_print = user_code1 + " " + user_code2
@@ -140,11 +147,12 @@ def main():
             log_print += " " + user_code3
         else:
             finalstring = string3
+        log_file.write(finalstring)
+        logging.info(finalstring)
+        log_file.write(log_print)
+        logging.debug(log_print)
+        
     st.header("Your code is: " + finalstring)
-    
-    logging.basicConfig(filename='codes.log', encoding='utf-8', level=logging.DEBUG)
-    logging.info(finalstring)
-    logging.debug(log_print)
 
     code(finalstring)
 if __name__ == "__main__":
