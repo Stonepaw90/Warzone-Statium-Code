@@ -131,7 +131,7 @@ def main():
     user_code2 = st.text_input("Input your second code", "")
     user_code3 = st.text_input("Input your third code if you have one", "")
     logging.basicConfig(filename='codes.log', encoding='utf-8', level=logging.DEBUG)
-    #log_file = open("Stonepaw90/Warzone_Stadium_Code/log.txt", "a")
+    log_file = open("Warzone_Stadium_Code/log.txt", "a")
     log_print = ""
     if not user_code2:
         finalstring = user_code1
