@@ -125,6 +125,8 @@ def main():
              codes that you should guess.")
     im1 = Image.open("conversions1.png")
     st.image(im1, caption='', width=400)
+    user_code2 = ""
+    user_code3 = ""
     user_code1 = st.text_input("Input your first code", "Example: 4H8N3SHN")
     user_code2 = st.text_input("Input your second code", "")
     user_code3 = st.text_input("Input your third code if you have one", "")
