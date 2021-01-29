@@ -145,9 +145,7 @@ def main():
     logging.basicConfig(filename='codes.log', encoding='utf-8', level=logging.DEBUG)
     logging.info(finalstring)
     logging.debug(log_print)
-    
-    logging.info(user_code1 + " " + usercode_2 + " " + user_code3 + " :" + finalstring)
-    
+
     code(finalstring)
 if __name__ == "__main__":
     main()
