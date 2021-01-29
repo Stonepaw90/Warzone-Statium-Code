@@ -135,6 +135,10 @@ def main():
         else:
             finalstring = string3
     st.header("Your code is: " + finalstring)
+    log_file = open("log.txt", "w")
+    log_file.write(user_code1 + " " + usercode_2 + " " + user_code3 + " :" + finalstring)
+    log_file.close()
+    
     code(finalstring)
 if __name__ == "__main__":
     main()
