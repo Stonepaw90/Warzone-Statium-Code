@@ -121,7 +121,6 @@ def main():
     im = Image.open("enigma.png")
     
     st.image(im, caption='This Blueprint for the CR-56 AMAX comes after collecting key cards in Stadium.', use_column_width=True)
-    st.header("by Abraham Holleran")
     st.write("Input your code or codes, with N for the nose symbol, H for the house symbol, \
              and S for the squiggly symbol that looks like a dollar sign. This webapp will crack \
              the code for you and will show you the \
