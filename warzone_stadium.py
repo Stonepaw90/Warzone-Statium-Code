@@ -24,6 +24,13 @@ def printit(string, firstlist=[], firstnum=314, secondlist=[], secondnum=314, th
 
 def code(string):
     #print(string)
+    string = string.replace('C', 'S')
+    string = string.replace('s', 'S')
+    string = string.replace('c', 'S')
+    string = string.replace('a', 'H')
+    string = string.replace('A', 'H')
+    string = string.replace('h', 'H')
+    string = string.replace('n', 'N')
     poslistt = []
     numlist = []
     for m in range(len(string)):
